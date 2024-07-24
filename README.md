@@ -10,8 +10,3 @@ Currently, two official plugins are available:
 
 
 
-
-
-git remote add origin https://github.com/ajinkya887/Revise_React.git
-git branch -M main
-git push -u origin main
