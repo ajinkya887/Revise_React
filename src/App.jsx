@@ -14,6 +14,9 @@ import Counter from './StateManagemnet'
 import Navbar from './UseEffect/NavBar'
 import DataFetchingComponent from './DataFetchingComponent'
 import FormComponent from './FormComponent'
+import { Link, Routes, Route} from 'react-router-dom'
+import Home from './Router/Home'
+import About from './Router/About'
 
 function App() {
     const[color, setcolor] = useState(0)
@@ -24,7 +27,7 @@ function App() {
     }, [count])
   return (
     <> 
-    <ul>
+    {/* <ul>
     <li>Apples</li>
     <li>Bananas</li>
     <li>Cherries</li>
@@ -40,10 +43,22 @@ function App() {
       <Counter/>
       {/* <Navbar color={"navy " + "blue " + color}/> */}
       {/* <DataFetchingComponent/> */}
-      <FormComponent/>
+      {/* <FormComponent/>  */}
+      <div className="App">
+      <nav>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </div>
 
     </>
-  )
+  );
 }
 
 export default App
